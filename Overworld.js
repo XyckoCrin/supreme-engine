@@ -9,19 +9,25 @@ class Overworld {
 		const image = new Image();
 		image.onload = () => {
 			this.ctx.drawImage(image,0,0)
-		};
+		}
 		image.src = "/images/maps/DemoMap.png";
 		
 		//place some game objects here
 		const hero = new GameObject({
 			x: 5,
 			y: 6,
-		})
-		const hero1 = new GameObject({
+		});
+		const npc1 = new GameObject({
 			x: 7,
 			y: 9,
+			src: "/images/people/npc1.png"
 		})
-
+		
+		setTimeout(() => {
+			hero.sprite.draw(this.ctx);
+			npc1.sprite.draw(this.ctx);
+		}, 200)
+		
 		
 	}
 	
